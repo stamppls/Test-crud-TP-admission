@@ -1,0 +1,30 @@
+<div class="row mt-3" *ngIf="students.length === 0">
+  <div class="col-12" class="icon-btn-addnew">
+    <img src="https://www.flaticon.com/premium-icon/icons/svg/1916/1916992.svg" alt="" (click)="openDialog()">
+  </div>
+</div>
+
+<div class="row mt-3" *ngIf="students.length >= 1">
+  <div class="col-12">
+    <div class="row">
+      <img class="icon-btn-addnew1" src="https://www.flaticon.com/premium-icon/icons/svg/1916/1916992.svg" alt="" (click)="openDialog()" >
+    </div>
+    <div class="row">
+      <table>
+        <thead>
+          <th>ลำดับ</th>
+          <th>ชื่อ-นามสกุล</th>
+          <th>เลขประจำตัวประชาชน</th>
+          <th>จัดการ</th>
+        </thead>
+        <tr *ngFor="let student of students">
+          <td>{{student.num}}</td>
+          <td>{{student.fullname}}</td>
+          <td>{{student.pid}}</td>
+          <td><button>แก้ไข</button> &nbsp; <button>ดาวน์โหลด</button></td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
